@@ -13,6 +13,8 @@ function getResult(){
         success: function(data){
             // console it to check if its successful
             console.log(data)
+            // when new input is entered after first trial, lets wipe the elements from div to display the new input data. 
+            $('#answers').html('');
             // using for loop to get the data in array and display it.
             for(i = 0; i < data[1].length; i++){
             // appending the whole html elements and data in our answer div. 
@@ -33,4 +35,4 @@ $(document).keypress(function(e) {
     }
 });
 // run function when pressed the button search.
-document.getElementById('button').addEventListener('click',getResult,false)
+$('#button').click(getResult)
